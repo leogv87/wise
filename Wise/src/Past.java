@@ -50,7 +50,7 @@ public class Past extends JFrame {
 		final Past1 window4 = new Past1();
 		
 		
-		JButton btnNewButton = new JButton("MENU");
+		JButton btnNewButton = new JButton("M");
 		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 30));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
