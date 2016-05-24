@@ -48,6 +48,7 @@ public class Ventana2 extends JFrame {
 		final Past window3 = new Past();
 		final Present window6 = new Present();
 		final Future window10 = new Future();
+		final frmUsuarios window14 = new frmUsuarios();
 		
 		JButton VOCABULARY = new JButton("VOCABULARY");
 		VOCABULARY.setFont(new Font("Tahoma", Font.PLAIN, 40));
@@ -89,6 +90,14 @@ public class Ventana2 extends JFrame {
 		contentPane.add(FUTURE);
 		
 		JButton btnProof = new JButton("TEST");
+		btnProof.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				window14.setVisible(true);
+				dispose();
+				
+				
+			}
+		});
 		btnProof.setFont(new Font("Tahoma", Font.PLAIN, 40));
 		btnProof.setBounds(444, 514, 300, 110);
 		contentPane.add(btnProof);
