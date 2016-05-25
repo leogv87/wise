@@ -15,6 +15,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Font;
 import java.awt.Toolkit;
+import javax.swing.ImageIcon;
 
 public class frmUsuarios extends JFrame {
 
@@ -51,9 +52,13 @@ public class frmUsuarios extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblUsuario = new JLabel("                      ORGANICE LA FRASE");
+		final Solution_Past window16 = new Solution_Past();
+		final Solution_Present window17 = new Solution_Present();
+		final Solution_Future window18 = new Solution_Future();
+		
+		JLabel lblUsuario = new JLabel("                      ORGANIZE THE PHRASE");
 		lblUsuario.setFont(new Font("Tahoma", Font.PLAIN, 40));
-		lblUsuario.setBounds(107, 11, 1157, 79);
+		lblUsuario.setBounds(156, 11, 1157, 79);
 		contentPane.add(lblUsuario);
 		
 		txtPast = new JTextField();
@@ -62,13 +67,13 @@ public class frmUsuarios extends JFrame {
 		contentPane.add(txtPast);
 		txtPast.setColumns(10);
 		
-		JButton btnNewButton = new JButton("COMPROBAR");
+		JButton btnNewButton = new JButton("CHECK");
 		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 35));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				Usuariios usu=new Usuariios();
 				if(!usu.ValidarPast(txtPast.getText())) {
-					JOptionPane.showMessageDialog(null, "NO ES CORRECTO");
+					JOptionPane.showMessageDialog(null, "INCORRECTO, VUELVA A INTENTARLO");
 					txtPast.setText("");
 					txtPast.requestFocusInWindow();
 					return;			
@@ -79,16 +84,16 @@ public class frmUsuarios extends JFrame {
 				
 			}
 		});
-		btnNewButton.setBounds(813, 207, 300, 40);
+		btnNewButton.setBounds(725, 197, 250, 40);
 		contentPane.add(btnNewButton);
 		
-		JButton btnEntrar = new JButton("COMPROBAR");
+		JButton btnEntrar = new JButton("CHECK");
 		btnEntrar.setFont(new Font("Tahoma", Font.PLAIN, 35));
 		btnEntrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				Usuariios usu=new Usuariios();
 				if(!usu.ValidarPresent(txtPresent.getText())) {
-					JOptionPane.showMessageDialog(null, "NO ES CORRECTO");
+					JOptionPane.showMessageDialog(null, "INCORRECTO, VUELVA A INTENTARLO");
 					txtPresent.setText("");
 					txtPresent.requestFocusInWindow();
 					return;			
@@ -99,7 +104,7 @@ public class frmUsuarios extends JFrame {
 				
 			}
 		});
-		btnEntrar.setBounds(813, 375, 300, 40);
+		btnEntrar.setBounds(725, 365, 250, 40);
 		contentPane.add(btnEntrar);
 		
 		txtFuture = new JTextField();
@@ -108,13 +113,13 @@ public class frmUsuarios extends JFrame {
 		txtFuture.setBounds(27, 516, 673, 50);
 		contentPane.add(txtFuture);
 		
-		JButton btnEntrar_1 = new JButton("COMPROBAR");
+		JButton btnEntrar_1 = new JButton("CHECK");
 		btnEntrar_1.setFont(new Font("Tahoma", Font.PLAIN, 35));
 		btnEntrar_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Usuariios usu=new Usuariios();
 				if(!usu.ValidarFuture(txtFuture.getText())) {
-					JOptionPane.showMessageDialog(null, "NO ES CORRECTO");
+					JOptionPane.showMessageDialog(null, "INCORRECTO, VUELVA A INTENTARLO");
 					txtFuture.setText("");
 					txtFuture.requestFocusInWindow();
 					return;			
@@ -124,7 +129,7 @@ public class frmUsuarios extends JFrame {
 				dispose();
 			}
 		});
-		btnEntrar_1.setBounds(813, 528, 300, 40);
+		btnEntrar_1.setBounds(725, 526, 250, 40);
 		contentPane.add(btnEntrar_1);
 		
 		txtPresent = new JTextField();
@@ -144,5 +149,45 @@ public class frmUsuarios extends JFrame {
 		});
 		btnNewButton_1.setBounds(486, 618, 300, 40);
 		contentPane.add(btnNewButton_1);
+		
+		JButton btnNewButton_2 = new JButton("SOLUTION");
+		btnNewButton_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				window16.setVisible(true);
+				dispose();
+				
+			}
+		});
+		btnNewButton_2.setFont(new Font("Tahoma", Font.PLAIN, 35));
+		btnNewButton_2.setBounds(990, 197, 250, 40);
+		contentPane.add(btnNewButton_2);
+		
+		JButton button = new JButton("SOLUTION");
+		button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				window17.setVisible(true);
+				dispose();
+			}
+		});
+		button.setFont(new Font("Tahoma", Font.PLAIN, 35));
+		button.setBounds(990, 365, 250, 40);
+		contentPane.add(button);
+		
+		JButton button_1 = new JButton("SOLUTION");
+		button_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				window18.setVisible(true);
+				dispose();
+				
+			}
+		});
+		button_1.setFont(new Font("Tahoma", Font.PLAIN, 35));
+		button_1.setBounds(990, 526, 250, 40);
+		contentPane.add(button_1);
+		
+		JLabel lblNewLabel = new JLabel("New label");
+		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\LEONARDO\\Pictures\\WISE\\FONDO_TEST.png"));
+		lblNewLabel.setBounds(0, 0, 1264, 681);
+		contentPane.add(lblNewLabel);
 	}
 }
