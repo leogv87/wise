@@ -9,7 +9,7 @@ public class Usuariios {
 			return false;
 	}
 	public boolean ValidarPresent(String Present){
-		if(Present.equals("they play basketball every Sunday")){
+		if(Present.equals("they play basketball every sunday")){
 			return true;
 		}
 		else

@@ -49,8 +49,15 @@ public class Ventana2 extends JFrame {
 		final Present window6 = new Present();
 		final Future window10 = new Future();
 		final frmUsuarios window14 = new frmUsuarios();
+		final Vocabulary1 window19 = new Vocabulary1();
 		
 		JButton VOCABULARY = new JButton("VOCABULARY");
+		VOCABULARY.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				window19.setVisible(true);
+				dispose();
+			}
+		});
 		VOCABULARY.setFont(new Font("Tahoma", Font.PLAIN, 40));
 		VOCABULARY.setBounds(65, 514, 300, 110);
 		contentPane.add(VOCABULARY);
